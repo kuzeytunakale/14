@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bu site Kuzey Tuna Kale tarafından yapılmıştır. Kuzey, kuzey, Tuna, tuna, Kale, kale, KUZEY, TUNA, KALE, Kuzey Tuna, kuzey tuna, Kuzey Tuna Kale, kuzey tuna kale">
-    <meta name="keywords" content="Kuzey, kuzey, Tuna, tuna, Kale, kale, KUZEY, TUNA, KALE, Kuzey Tuna, kuzey tuna, Kuzey Tuna Kale, kuzey tuna kale">
-    <title>Gök Bilimciler</title>
+    <title>Hoş Geldiniz</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #welcome { display: none; }
+    </style>
 </head>
 <body>
- <img src="https://kuzeytunakale.github.io/14/14.jpg" width="100%" height="100%" alt="Astronomlar"/>
- 
-     <a href="https://kuzeytunakale.github.io/14/14.jpg">
-         <button width="100" height="100">Tam Ekran</button>
-     </a>
- 
+    <h1>Giriş Yap</h1>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Kullanıcı Adı" required><br><br>
+        <input type="password" id="password" placeholder="Şifre" required><br><br>
+        <button type="submit">Giriş Yap</button>
+    </form>
+    <div id="welcome">
+        <h2>Hoş Geldiniz!</h2>
+        <p>Merhaba!</p>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username === 'kuzey' && password === '1111') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('welcome').style.display = 'block';
+            } else {
+                alert('Yanlış kullanıcı adı veya şifre!');
+            }
+        });
+    </script>
 </body>
 </html>
